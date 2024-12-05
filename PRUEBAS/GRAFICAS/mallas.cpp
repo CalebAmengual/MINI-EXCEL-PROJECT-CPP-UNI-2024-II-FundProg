@@ -1,5 +1,6 @@
 #include<iostream>
 #include"mallas.h"
+#include"functmallas.h"
 
 using namespace std;
 
@@ -53,10 +54,14 @@ void genMalla2(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16)
     }
 }
 
-void genMalla3(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, string **ptrM)
+void genMalla3(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, string **ptrM =nullptr)
 {
+    
     Tam C = (ANCHO+1)*cCOLUMNAS + 1;
     Tam F = 2*cFILAS + 1;
+
+    int filaMat = 0;
+    int coluMat = 0;
 
     for (auto i = 0; i < F; i++)
     {
@@ -80,10 +85,17 @@ void genMalla3(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, string **ptrM)
                 }
                 if (j%(ANCHO+1) != 0)
                 {
-                    
-                    cout<<" ";
+                    //cout<<" ";
+                    cout<<ceStringFormat(ptrM[filaMat][coluMat],ANCHO);
+                    coluMat++;
+                    j += ANCHO-1;
                 }
             }
+        }
+        coluMat = 0;
+        if (i%2==1)
+        {
+            filaMat++;
         }
         cout<<endl;
     }

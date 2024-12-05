@@ -9,4 +9,6 @@ void demoMalla1();
 
 void demoMalla2();
 
+void demoMalla3();
+
 #endif //__DEMOSMALLAS_H__

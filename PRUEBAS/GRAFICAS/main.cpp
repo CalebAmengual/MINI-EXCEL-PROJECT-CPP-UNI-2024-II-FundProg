@@ -9,6 +9,8 @@ using namespace std;
 int main(){
 
     //demoMalla1();
-    demoMalla2();
+    //demoMalla2();
+    demoMalla3();
+
     return 0;
 }

@@ -15,4 +15,6 @@ struct RESULMALLA
 
 RESULMALLA pedirMalla();
 
+string ceStringFormat(const string &, int);
+
 #endif //__FUNCTMALLAS_H__

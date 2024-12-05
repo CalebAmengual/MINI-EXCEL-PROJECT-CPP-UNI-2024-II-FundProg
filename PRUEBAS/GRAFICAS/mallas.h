@@ -3,6 +3,8 @@
 
 #include<iostream>
 
+using namespace std;
+
 using Tam = int;
 
 char mallacaracter1(char);
@@ -10,5 +12,7 @@ char mallacaracter1(char);
 void genMalla1(Tam, Tam, char);
 
 void genMalla2(Tam, Tam, Tam);
+
+void genMalla3(Tam, Tam, Tam, string **);
 
 #endif

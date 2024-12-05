@@ -1,5 +1,5 @@
 #include<iostream>
-#include<cstring>
+#include<string>
 #include"mallas.h"
 #include"functmallas.h"
 
@@ -15,5 +15,12 @@ RESULMALLA pedirMalla()
     cin>>carac;
 
     RESULMALLA resultado = {f,c,carac};
+    return resultado;
+}
+
+string ceStringFormat(const string &cstr = " ", int n = 16)
+{
+    string resultado = cstr.substr(0, n);
+    resultado.resize(n, ' ');
     return resultado;
 }
