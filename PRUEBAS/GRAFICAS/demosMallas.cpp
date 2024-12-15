@@ -35,8 +35,8 @@ void demoMalla3()
     }
     
     
-    genMalla3(Fi,Co,AN, matriz1);
-
+    //genMalla3(Fi,Co,AN, matriz1);
+    genMalla4(Fi,Co,AN, matriz1);
     for (int i = 0; i < Fi; i++)
     {
         delete matriz1[i];
