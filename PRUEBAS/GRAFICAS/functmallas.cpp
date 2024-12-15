@@ -18,8 +18,16 @@ RESULMALLA pedirMalla()
     return resultado;
 }
 
-string ceStringFormat(const string &cstr = " ", int n = 16)
+string ceStringFormat(const string & cstr=" ", int n = 16)
 {
+    string resultado = cstr.substr(0, n);
+    resultado.resize(n, ' ');
+    return resultado;
+}
+
+string ceStringFormat(const char & c='A', int n = 16)
+{
+    string cstr(1, c);
     string resultado = cstr.substr(0, n);
     resultado.resize(n, ' ');
     return resultado;
