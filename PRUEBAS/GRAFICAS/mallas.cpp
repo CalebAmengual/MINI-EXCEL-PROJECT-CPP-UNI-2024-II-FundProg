@@ -57,8 +57,8 @@ void genMalla2(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16)
 void genMalla3(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, string **ptrM =nullptr)
 {
     
-    Tam C = (ANCHO+1)*(cCOLUMNAS) + 1;
-    Tam F = 2*(cFILAS) + 1;
+    Tam C = (ANCHO+1)*(cCOLUMNAS+1) + 1;
+    Tam F = 2*(cFILAS+1) + 1;
 
     int filaMat = 0;
     int coluMat = 0;
@@ -83,12 +83,19 @@ void genMalla3(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, string **ptrM =nullp
                 {
                     cout<<"|";
                 }
-                if (j%(ANCHO+1) != 0)
-                {
-                    cout<<ceStringFormat(ptrM[filaMat][coluMat],ANCHO);
+                if (j%(ANCHO+1) != 0){
+                if(j==1){
+                    cout<<ceStringFormat(to_string(filaMat+1),ANCHO);
+                    coluMat++;
+                    j +=ANCHO-1;
+                }
+                else{
+                    cout<<ceStringFormat(ptrM[filaMat][coluMat-1],ANCHO);
                     coluMat++;
                     j += ANCHO-1;
+                }   
                 }
+                
             }
         }
         coluMat = 0;
