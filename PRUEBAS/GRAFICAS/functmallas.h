@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include"mallas.h"
+#include <string>
 
 using namespace std;
 
@@ -15,6 +16,8 @@ struct RESULMALLA
 
 RESULMALLA pedirMalla();
 
+
 string ceStringFormat(const string &, int);
+string ceStringFormat(const char &, int);
 
 #endif //__FUNCTMALLAS_H__

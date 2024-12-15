@@ -14,5 +14,6 @@ void genMalla1(Tam, Tam, char);
 void genMalla2(Tam, Tam, Tam);
 
 void genMalla3(Tam, Tam, Tam, string **);
+void genMalla4(Tam, Tam, Tam, string **);
 
 #endif

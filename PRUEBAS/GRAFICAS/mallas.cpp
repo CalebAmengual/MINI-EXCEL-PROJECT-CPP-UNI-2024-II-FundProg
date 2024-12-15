@@ -64,18 +64,18 @@ void genMalla3(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, string **ptrM =nullp
     int coluMat = 0;
 
     for (auto i = 0; i < F; i++)
-    {
+    {   
         for (auto j = 0; j < C; j++)
         {
             if (i%2 == 0)
-            {
+            { //abre
                 if (j%(ANCHO+1) == 0)
                 {
                     cout<<".";
                 }else{
                     cout<<"-";
                 }
-            }
+            } //cierra
 
             if (i%2 != 0)
             {
@@ -84,27 +84,121 @@ void genMalla3(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, string **ptrM =nullp
                     cout<<"|";
                 }
                 if (j%(ANCHO+1) != 0){
-                if(j==1){
-                    cout<<ceStringFormat(to_string(filaMat+1),ANCHO);
+                
+                /*if(i==1){
+                    if(j==1){ cout<<ceStringFormat(" ",ANCHO); coluMat++; j +=ANCHO-1;}
+                    else{
+                        char c=65+coluMat;    
+                        cout<<ceStringFormat(to_string(c),ANCHO);
+                        coluMat++;
+                        j +=ANCHO-1; 
+                    }
+                }*/
+                if(j==1 && i==1){
+                    cout<<ceStringFormat(" ",ANCHO);
+                    coluMat++;
+                    j +=ANCHO-1;  
+                }
+                if(j==1 && i!=1){                    
+                    cout<<ceStringFormat(to_string(filaMat),ANCHO);
                     coluMat++;
                     j +=ANCHO-1;
                 }
-                else{
-                    cout<<ceStringFormat(ptrM[filaMat][coluMat-1],ANCHO);
+
+                if(i==1 && j!=1){
+                    char c=65+coluMat;
+                    cout<<ceStringFormat(to_string(C),ANCHO);
+                    coluMat++;
+                    j +=ANCHO-1; 
+                }
+                
+                if(j!=1 && i!=1){
+                
+                    cout<<ceStringFormat(ptrM[filaMat-1][coluMat-1],ANCHO);
                     coluMat++;
                     j += ANCHO-1;
-                }   
                 }
                 
             }
+        }
         }
         coluMat = 0;
         if (i%2==1)
         {
             filaMat++;
         }
-        cout<<endl;
-    }
+        //cierra j
+        cout<<endl; //interlineado 
+    } //cierra i
 }
 
 
+void genMalla4(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, string **ptrM =nullptr)
+{
+    
+    Tam C = (ANCHO+1)*(cCOLUMNAS+1) + 1;
+    Tam F = 2*(cFILAS+1) + 1;
+
+    int filaMat = 0;
+    int coluMat = 0;
+
+    for (auto i = 0; i < F; i++)
+    {   
+        for (auto j = 0; j < C; j++)
+        {
+            if (i%2 == 0)
+            { //abre
+                if (j%(ANCHO+1) == 0)
+                {
+                    cout<<".";
+                }else{
+                    cout<<"-";
+                }
+            } //cierra
+
+            if (i%2 != 0)
+            {
+                if (j%(ANCHO+1) == 0)
+                {
+                    cout<<"|";
+                }
+                if (j%(ANCHO+1) != 0){
+                    
+                    if(j==1 && i==1){
+                        cout<<ceStringFormat(" ",ANCHO);
+                        coluMat++;
+                        j += ANCHO-1;
+                    }
+
+                    if(j==1 || i==1){
+
+                        if(j==1){
+                        cout<<ceStringFormat(to_string(filaMat),ANCHO);
+                        coluMat++;
+                        j += ANCHO-1;
+                        }
+                        else{
+                            char c=64+coluMat;
+                            cout<<ceStringFormat(c,ANCHO);
+                            coluMat++;
+                            j += ANCHO-1;
+                        }
+                    }
+
+                    else{
+                    cout<<ceStringFormat(ptrM[filaMat-1][coluMat-1],ANCHO);
+                    coluMat++;
+                    j += ANCHO-1;
+                    }
+            }
+        }
+        }
+        coluMat = 0;
+        if (i%2==1)
+        {
+            filaMat++;
+        }
+        //cierra j
+        cout<<endl; //interlineado 
+    } //cierra i
+}
