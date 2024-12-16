@@ -15,26 +15,23 @@ class CELDA
     private:
     string m_contenido="";
     public:
-    string extraerContenido(const string &m_visible);
+    string extraerContenido();
     void establecerContenido(const string &cadena);
 
     private:
     string m_valor = "0";
     public:
-    string extraerValor(const string &m_visible);
+    string extraerValor();
     void establecerValor(const string &cadena);
 
     private:
     string m_visible=" ";
     public:
-    string extraerVisible(const string &m_visible);
+    string extraerVisible();
     void establecerVisible(const string &cadena);
-
-
 
     public:
     void actualizarCelda();
-
 
     public:
     virtual ~CELDA();

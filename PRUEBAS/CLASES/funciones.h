@@ -8,17 +8,18 @@
 
 using namespace std;
 
-bool esCelda(string);
+bool esNombreDeCelda(string);
 
 POSICIONESMATRIZ convertirCeldaAMatriz(string);
 
 string convertirMatrizACelda(POSICIONESMATRIZ);
 
-bool existeOperador(string);
+bool existeOperador(const string&);
 
-CAD_OBJETIVO buscarCadenaObj(string);
+CAD_OBJETIVO buscarCadenaObj(const string&);
 
-string operarCadena(string);
+string operarCadena(string, CELDA **);
 
-double evaluar(string);
+double evaluar(string, CELDA**);
+
 #endif //__FUNCIONES_H__
