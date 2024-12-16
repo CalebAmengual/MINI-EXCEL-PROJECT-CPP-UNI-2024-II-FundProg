@@ -3,38 +3,37 @@
 
 #include<iostream>
 #include<string>
-#include"tipos.h"
 
 using namespace std;
 
 class CELDA
 {
     public:
-    CELDA();
+    CELDA(){};
 
     private:
     string m_contenido="";
     public:
-    string extraerContenido();
-    void establecerContenido(const string &cadena);
+    string extraerContenido(){return m_contenido;};
+    void establecerContenido(const string &cadena){m_contenido = cadena;};
 
     private:
     string m_valor = "0";
     public:
-    string extraerValor();
-    void establecerValor(const string &cadena);
+    string extraerValor(){return m_valor;};
+    void establecerValor(const string &cadena){m_valor = cadena;};
 
     private:
     string m_visible=" ";
     public:
-    string extraerVisible();
-    void establecerVisible(const string &cadena);
+    string extraerVisible(){return m_visible;};
+    void establecerVisible(const string &cadena){m_visible = cadena;};
 
     public:
-    void actualizarCelda();
+    void actualizarCelda(CELDA **matriz);
 
     public:
-    virtual ~CELDA();
+    virtual ~CELDA(){};
 };
 
 #endif //__CELDA_H__

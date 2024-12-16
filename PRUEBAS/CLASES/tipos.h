@@ -14,12 +14,6 @@ struct CAD_OBJETIVO
     string c_operador;
 };
 
-struct NODO_LISTA_REF
-{
-    CELDA *pCelRef;
-    NODO_LISTA_REF *N_SIGUIENTE;
-};
-
 struct POSICIONESMATRIZ
 {
     int pos[2];

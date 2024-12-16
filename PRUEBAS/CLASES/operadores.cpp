@@ -12,16 +12,42 @@ string strOPERADORES[] = {"=", "+", "-", "*", "/", "sen", "cos", "tan"};
 
 double OPERADOR_Asignacion(string CAD, CELDA **matriz)
 {
+    string subcad = CAD.substr(1);
     double operando;
-
-
-
+    if (esNombreDeCelda(subcad))
+    {
+        operando = stod(matriz[convertirCeldaAMatriz(subcad).pos[0]][convertirCeldaAMatriz(subcad).pos[1]].extraerValor());
+    }else{
+        operando = stod(subcad);
+    }
     return operando;
 }
 
 double OPERADOR_Adicion(string CAD, CELDA **matriz)
 {
     double operando1, operando2;
+    size_t pos = CAD.find('+');
+    string subcad1 = CAD.substr(0, pos);
+    string subcad2 = CAD.substr(pos + 1);
+
+    if (esNombreDeCelda(subcad1))
+    {
+        operando1 = stod(matriz[convertirCeldaAMatriz(subcad1).pos[0]][convertirCeldaAMatriz(subcad1).pos[1]].extraerValor());
+        if (esNombreDeCelda(subcad2))
+            {
+                operando2 = stod(matriz[convertirCeldaAMatriz(subcad2).pos[0]][convertirCeldaAMatriz(subcad2).pos[1]].extraerValor());
+            }else{
+                operando2 = stod(subcad2);
+            }
+    }else{
+        operando1 = stod(subcad1);
+        if (esNombreDeCelda(subcad2))
+            {
+                operando2 = stod(matriz[convertirCeldaAMatriz(subcad2).pos[0]][convertirCeldaAMatriz(subcad2).pos[1]].extraerValor());
+            }else{
+                operando2 = stod(subcad2);
+            }
+    }
 
     return operando1 + operando2;
 }
@@ -29,6 +55,28 @@ double OPERADOR_Adicion(string CAD, CELDA **matriz)
 double OPERADOR_Sustraccion(string CAD, CELDA **matriz)
 {
     double operando1, operando2;
+    size_t pos = CAD.find('-');
+    string subcad1 = CAD.substr(0, pos);
+    string subcad2 = CAD.substr(pos + 1);
+
+    if (esNombreDeCelda(subcad1))
+    {
+        operando1 = stod(matriz[convertirCeldaAMatriz(subcad1).pos[0]][convertirCeldaAMatriz(subcad1).pos[1]].extraerValor());
+        if (esNombreDeCelda(subcad2))
+            {
+                operando2 = stod(matriz[convertirCeldaAMatriz(subcad2).pos[0]][convertirCeldaAMatriz(subcad2).pos[1]].extraerValor());
+            }else{
+                operando2 = stod(subcad2);
+            }
+    }else{
+        operando1 = stod(subcad1);
+        if (esNombreDeCelda(subcad2))
+            {
+                operando2 = stod(matriz[convertirCeldaAMatriz(subcad2).pos[0]][convertirCeldaAMatriz(subcad2).pos[1]].extraerValor());
+            }else{
+                operando2 = stod(subcad2);
+            }
+    }
 
     return operando1 - operando2;
 }
@@ -36,6 +84,28 @@ double OPERADOR_Sustraccion(string CAD, CELDA **matriz)
 double OPERADOR_Multiplicacion(string CAD, CELDA **matriz)
 {
     double operando1, operando2;
+    size_t pos = CAD.find('*');
+    string subcad1 = CAD.substr(0, pos);
+    string subcad2 = CAD.substr(pos + 1);
+
+    if (esNombreDeCelda(subcad1))
+    {
+        operando1 = stod(matriz[convertirCeldaAMatriz(subcad1).pos[0]][convertirCeldaAMatriz(subcad1).pos[1]].extraerValor());
+        if (esNombreDeCelda(subcad2))
+            {
+                operando2 = stod(matriz[convertirCeldaAMatriz(subcad2).pos[0]][convertirCeldaAMatriz(subcad2).pos[1]].extraerValor());
+            }else{
+                operando2 = stod(subcad2);
+            }
+    }else{
+        operando1 = stod(subcad1);
+        if (esNombreDeCelda(subcad2))
+            {
+                operando2 = stod(matriz[convertirCeldaAMatriz(subcad2).pos[0]][convertirCeldaAMatriz(subcad2).pos[1]].extraerValor());
+            }else{
+                operando2 = stod(subcad2);
+            }
+    }
 
     return operando1 * operando2;
 }
@@ -43,6 +113,28 @@ double OPERADOR_Multiplicacion(string CAD, CELDA **matriz)
 double OPERADOR_Division(string CAD, CELDA **matriz)
 {
     double operando1, operando2;
+    size_t pos = CAD.find('/');
+    string subcad1 = CAD.substr(0, pos);
+    string subcad2 = CAD.substr(pos + 1);
+
+    if (esNombreDeCelda(subcad1))
+    {
+        operando1 = stod(matriz[convertirCeldaAMatriz(subcad1).pos[0]][convertirCeldaAMatriz(subcad1).pos[1]].extraerValor());
+        if (esNombreDeCelda(subcad2))
+            {
+                operando2 = stod(matriz[convertirCeldaAMatriz(subcad2).pos[0]][convertirCeldaAMatriz(subcad2).pos[1]].extraerValor());
+            }else{
+                operando2 = stod(subcad2);
+            }
+    }else{
+        operando1 = stod(subcad1);
+        if (esNombreDeCelda(subcad2))
+            {
+                operando2 = stod(matriz[convertirCeldaAMatriz(subcad2).pos[0]][convertirCeldaAMatriz(subcad2).pos[1]].extraerValor());
+            }else{
+                operando2 = stod(subcad2);
+            }
+    }
 
     return operando1 / operando2;
 }
