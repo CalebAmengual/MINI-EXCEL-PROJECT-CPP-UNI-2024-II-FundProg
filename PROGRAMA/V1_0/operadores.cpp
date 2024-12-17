@@ -8,7 +8,7 @@
 
 using namespace std;
 
-string strOPERADORES[] = {"=", "+", "-", "*", "/", "sen", "cos", "tan"};
+string strOPERADORES[8] = {"=", "+", "-", "*", "/", "sen", "cos", "tan"};
 
 double OPERADOR_Asignacion(string CAD, CELDA **matriz)
 {
@@ -193,4 +193,4 @@ double OPERADOR_Tangente(string CAD, CELDA **matriz)
     }
 }
 
-double (*fOpe[])(string, CELDA **matriz) = {&OPERADOR_Asignacion, &OPERADOR_Adicion, &OPERADOR_Sustraccion, &OPERADOR_Multiplicacion, &OPERADOR_Division, &OPERADOR_Seno, &OPERADOR_Coseno, &OPERADOR_Tangente};
+double (*fOpe[8])(string, CELDA **matriz) = {&OPERADOR_Asignacion, &OPERADOR_Adicion, &OPERADOR_Sustraccion, &OPERADOR_Multiplicacion, &OPERADOR_Division, &OPERADOR_Seno, &OPERADOR_Coseno, &OPERADOR_Tangente};
