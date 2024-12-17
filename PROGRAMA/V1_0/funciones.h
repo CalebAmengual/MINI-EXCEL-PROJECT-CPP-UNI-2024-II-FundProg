@@ -21,5 +21,6 @@ CAD_OBJETIVO buscarCadenaObj(const string&);
 string operarCadena(string, CELDA **);
 
 double evaluar(string, CELDA**);
+void actualizarCelda(const string , CELDA **);
 
 #endif //__FUNCIONES_H__
