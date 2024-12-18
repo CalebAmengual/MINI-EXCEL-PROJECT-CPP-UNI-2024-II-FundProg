@@ -14,13 +14,16 @@ using namespace std;
 void mostrarMenu();
 void escribirEnCelda(CELDA **, Tam, Tam);
 void mostrarContenidoCelda(CELDA **, Tam, Tam);
+void demo1(CELDA **);
 // g++ main.cpp celda.cpp funciones.cpp functmallas.cpp mallas.cpp operadores.cpp matrizceld.cpp -o main
 
 int main() {
     // 
     Tam filas = 5, columnas = 6, ancho = 10;
-    CELDA **Matriz = genMatrizDinCeldas1(filas,columnas);
-    
+    //CELDA **Matriz = genMatrizDinCeldas1(filas,columnas);
+    int tamano = size(CELDA)
+    //Matriz[0][1].establecerValor(to_string(3.14));
+    //demo1(Matriz);
 
     int opcion = 0;
     do {
@@ -65,20 +68,33 @@ void escribirEnCelda(CELDA **matriz, Tam filas, Tam columnas) {
     string valor;
 
     cout<<"Ingrese celda a modificar: ";
-    getline(cin,valor);
+    cin>>valor;
+    rewind(stdin);
+    cout<<endl;
     
-    POSICIONESMATRIZ coordenadas = convertirCeldaAMatriz(valor);
+    POSICIONESMATRIZ coordenadas = ::convertirCeldaAMatriz(valor);
     
     string ecuacion;
     cout<<"Ingrese ecuacion: ";
-    getline(cin,ecuacion);
+    cin>>ecuacion;
+    rewind(stdin);
+    cout<<ecuacion;
 
     matriz[coordenadas.pos[0]][coordenadas.pos[1]].establecerContenido(ecuacion);
-
+    //matriz[coordenadas.pos[0]][coordenadas.pos[1]].establecerVisible(ecuacion);
     matriz[coordenadas.pos[0]][coordenadas.pos[1]].actualizarCelda(matriz);
 }
 
 
 void mostrarContenidoCelda(CELDA **matriz,Tam filas,Tam columnas){
     genMalla4(filas, columnas, 16, matriz);
+}
+
+
+void demo1(CELDA **mat)
+{
+    double resul=-1;
+    string cad1="=B1", cad2="5";
+    resul=::OPERADOR_Asignacion(cad1, mat);
+    cout<<resul<<endl;
 }

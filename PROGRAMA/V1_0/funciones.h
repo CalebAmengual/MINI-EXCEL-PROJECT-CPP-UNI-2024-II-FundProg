@@ -3,22 +3,20 @@
 
 #include<iostream>
 #include"tipos.h"
-#include"operadores.h"
 #include"celda.h"
+#include"operadores.h"
 
 using namespace std;
 
-bool esNombreDeCelda(string);
+bool esNombreDeCelda(const string&);
 
-POSICIONESMATRIZ convertirCeldaAMatriz(string);
+POSICIONESMATRIZ convertirCeldaAMatriz(const string&);
 
 string convertirMatrizACelda(POSICIONESMATRIZ);
 
 bool existeOperador(const string&);
 
 CAD_OBJETIVO buscarCadenaObj(const string&);
-
-string operarCadena(string, CELDA **);
 
 double evaluar(string, CELDA**);
 void actualizarCelda(const string , CELDA **);
