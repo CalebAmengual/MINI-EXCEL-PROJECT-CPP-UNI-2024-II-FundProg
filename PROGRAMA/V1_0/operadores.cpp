@@ -4,19 +4,18 @@
 #include"celda.h"
 #include"operadores.h"
 #include"funciones.h"
+#include"tipos.h"
 
 
 using namespace std;
-
-string strOPERADORES[8] = {"=", "+", "-", "*", "/", "sen", "cos", "tan"};
 
 double OPERADOR_Asignacion(string CAD, CELDA **matriz)
 {
     string subcad = CAD.substr(1);
     double operando;
-    if (esNombreDeCelda(subcad))
+    if (::esNombreDeCelda(subcad))
     {
-        operando = stod(matriz[convertirCeldaAMatriz(subcad).pos[0]][convertirCeldaAMatriz(subcad).pos[1]].extraerValor());
+        operando = stod(matriz[::convertirCeldaAMatriz(subcad).pos[0]][::convertirCeldaAMatriz(subcad).pos[1]].extraerValor());
     }else{
         operando = stod(subcad);
     }
@@ -30,7 +29,7 @@ double OPERADOR_Adicion(string CAD, CELDA **matriz)
     string subcad1 = CAD.substr(0, pos);
     string subcad2 = CAD.substr(pos + 1);
 
-    if (esNombreDeCelda(subcad1))
+    if (::esNombreDeCelda(subcad1))
     {
         operando1 = stod(matriz[convertirCeldaAMatriz(subcad1).pos[0]][convertirCeldaAMatriz(subcad1).pos[1]].extraerValor());
         if (esNombreDeCelda(subcad2))
@@ -193,4 +192,18 @@ double OPERADOR_Tangente(string CAD, CELDA **matriz)
     }
 }
 
-double (*fOpe[8])(string, CELDA **matriz) = {&OPERADOR_Asignacion, &OPERADOR_Adicion, &OPERADOR_Sustraccion, &OPERADOR_Multiplicacion, &OPERADOR_Division, &OPERADOR_Seno, &OPERADOR_Coseno, &OPERADOR_Tangente};
+string operarCadena(const CAD_OBJETIVO cadena, CELDA **matriz)
+{
+    double (*fOpe[8])(string, CELDA **matriz) = {&::OPERADOR_Asignacion, &::OPERADOR_Adicion, &::OPERADOR_Sustraccion, &::OPERADOR_Multiplicacion, &::OPERADOR_Division, &OPERADOR_Seno, &::OPERADOR_Coseno, &::OPERADOR_Tangente};
+    string strOPERADORES[] = {"=", "+", "-", "*", "/", "sen", "cos", "tan"};
+    int i=0;
+    for (string ope : strOPERADORES)
+    {
+        if (cadena.c_operador == ope)
+        {
+            string nueva_subcad = to_string(fOpe[i](cadena.cad, matriz));
+            return nueva_subcad;
+        }
+        i++;
+    }
+}

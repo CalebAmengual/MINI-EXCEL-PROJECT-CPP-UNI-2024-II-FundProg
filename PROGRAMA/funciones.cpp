@@ -9,7 +9,7 @@
 
 using namespace std;
 
-
+string strOPERADORES[8] = {"=", "+", "-", "*", "/", "sen", "cos", "tan"};
 
 bool esNombreDeCelda(const string &cad)
 {
@@ -65,8 +65,8 @@ POSICIONESMATRIZ convertirCeldaAMatriz(const string &celda)
     }
 
     // Ajustar índices para que empiecen en 0.
-    coordenadas.pos[0] = fila - 1;
-    coordenadas.pos[1] = columna - 1;
+    coordenadas.pos[1] = fila - 1;
+    coordenadas.pos[2] = columna - 1;
     return coordenadas;
 }
 
@@ -91,7 +91,7 @@ bool existeOperador(const string &cad)
 {
     string strOPERADORES[] = {"=", "+", "-", "*", "/", "sen", "cos", "tan"};
 
-    for (const string& operador : strOPERADORES) {
+    for (const std::string& operador : strOPERADORES) {
         if (cad.find(operador) != string::npos) {
             return true;
         }
@@ -157,7 +157,19 @@ CAD_OBJETIVO buscarCadenaObj(const string &cadena)
     RESULTADO.c_operador = operadorCapturado;
 }
 
-
+string operarCadena(const CAD_OBJETIVO &cadena, CELDA **matriz)
+{
+    int i=0;
+    for (string ope : strOPERADORES)
+    {
+        if (cadena.c_operador == ope)
+        {
+            string nueva_subcad = to_string(fOpe[i](cadena.cad, matriz));
+            return nueva_subcad;
+        }
+        i++;
+    }
+}
 
 double evaluar(string cadena, CELDA **matriz)
 {
@@ -166,8 +178,8 @@ double evaluar(string cadena, CELDA **matriz)
         return stod(cadena);
     }else{
         CAD_OBJETIVO subcadena = buscarCadenaObj(cadena);
-        string nueva_cadena = ::operarCadena(subcadena, matriz);
+        string nueva_cadena = operarCadena(subcadena.cad, matriz);
         cadena.replace(subcadena.inicio, subcadena.cad.length(), nueva_cadena);
-        return evaluar(cadena, matriz);
+        evaluar(cadena, matriz);
     }
 }

@@ -4,6 +4,8 @@
 #include<iostream>
 #include<string>
 #include"celda.h"
+#include"tipos.h"
+#include"funciones.h"
 
 using namespace std;
 
@@ -25,5 +27,6 @@ double OPERADOR_Coseno(string, CELDA **);
 
 double OPERADOR_Tangente(string, CELDA **);
 
-double (*fOpe[8])(string, CELDA **);
+string operarCadena(const CAD_OBJETIVO , CELDA **);
+
 #endif //__OPERADORES_H__

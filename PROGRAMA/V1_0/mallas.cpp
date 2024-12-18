@@ -188,7 +188,7 @@ void genMalla4(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, CELDA **ptrM =nullpt
                     }
 
                     else{
-                    cout<<ceStringFormat(ptrM[filaMat-1][coluMat-1].extraerValor(),ANCHO);
+                    cout<<ceStringFormat(ptrM[filaMat-1][coluMat-1].extraerVisible(),ANCHO);
                     coluMat++;
                     j += ANCHO-1;
                     }
