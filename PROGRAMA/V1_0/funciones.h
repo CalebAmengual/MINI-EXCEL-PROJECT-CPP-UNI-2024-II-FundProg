@@ -19,5 +19,6 @@ bool existeOperador(const string&);
 CAD_OBJETIVO buscarCadenaObj(const string&);
 
 double evaluar(string, CELDA**);
+void actualizarCelda(const string , CELDA **);
 
 #endif //__FUNCIONES_H__
