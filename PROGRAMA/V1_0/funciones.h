@@ -2,6 +2,7 @@
 #define __FUNCIONES_H__
 
 #include<iostream>
+#include <memory>
 #include"tipos.h"
 #include"celda.h"
 #include"operadores.h"
@@ -18,6 +19,6 @@ bool existeOperador(const string&);
 
 CAD_OBJETIVO buscarCadenaObj(const string&);
 
-double evaluar(string, CELDA**);
+double evaluar(string, unique_ptr<CELDA[]>* & );
 
 #endif //__FUNCIONES_H__

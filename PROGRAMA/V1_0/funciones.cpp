@@ -2,6 +2,7 @@
 #include<cctype>
 #include<string>
 #include<cmath>
+#include <memory>
 #include"tipos.h"
 #include"operadores.h"
 #include"celda.h"
@@ -159,7 +160,7 @@ CAD_OBJETIVO buscarCadenaObj(const string &cadena)
 
 
 
-double evaluar(string cadena, CELDA **matriz)
+double evaluar(string cadena, unique_ptr<CELDA[]>* & matriz)
 {
     if (!existeOperador(cadena))
     {
