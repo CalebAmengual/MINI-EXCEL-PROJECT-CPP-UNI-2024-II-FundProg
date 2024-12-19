@@ -1,4 +1,5 @@
 #include<iostream>
+#include <memory>
 #include"mallas.h"
 #include"functmallas.h"
 #include "celda.h"
@@ -134,8 +135,9 @@ void genMalla3(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, string **ptrM =nullp
     } //cierra i
 } */
 
+unique_ptr<CELDA[]>*ptr=nullptr;
 
-void genMalla4(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, CELDA **ptrM =nullptr)
+void genMalla4(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, unique_ptr<CELDA[]>* & ptrM = ptr )
 {
     
     Tam C = (ANCHO+1)*(cCOLUMNAS+1) + 1;
