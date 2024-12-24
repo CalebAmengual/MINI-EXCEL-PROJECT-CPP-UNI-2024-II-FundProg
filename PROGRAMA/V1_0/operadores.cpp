@@ -208,7 +208,6 @@ string operarCadena(const CAD_OBJETIVO cadena, unique_ptr<CELDA[]>* & matriz)
         if (cadena.c_operador == ope)
         {
             string nueva_subcad = to_string(fOpe[i](cadena.cad, matriz));
-            cout<<"\nXXXXX"<<nueva_subcad<<"XXXXX\n";
             return nueva_subcad;
         }
         i++;

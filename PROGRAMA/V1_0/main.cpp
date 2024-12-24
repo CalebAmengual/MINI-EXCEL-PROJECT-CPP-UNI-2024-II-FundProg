@@ -80,7 +80,6 @@ void escribirEnCelda(unique_ptr<CELDA[]>* & matriz, Tam filas, Tam columnas) {
     cout<<"Ingrese ecuacion: ";
     cin>>ecuacion;
     rewind(stdin);
-    cout<<ecuacion;
 
     matriz[coordenadas.pos[0]][coordenadas.pos[1]].establecerContenido(ecuacion);
     //matriz[coordenadas.pos[0]][coordenadas.pos[1]].establecerVisible(ecuacion);
