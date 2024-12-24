@@ -156,6 +156,7 @@ CAD_OBJETIVO buscarCadenaObj(const string &cadena)
     RESULTADO.cad = subcadenaEncontrada;
     RESULTADO.inicio = posSubcadena;
     RESULTADO.c_operador = operadorCapturado;
+    return RESULTADO;
 }
 
 
