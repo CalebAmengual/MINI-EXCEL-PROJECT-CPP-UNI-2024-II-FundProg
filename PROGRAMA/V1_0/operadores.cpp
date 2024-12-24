@@ -140,6 +140,8 @@ double OPERADOR_Division(string CAD, unique_ptr<CELDA[]>* & matriz)
 
 double OPERADOR_Seno(string CAD, unique_ptr<CELDA[]>* & matriz)
 {
+    size_t longitud_strop = 4;
+    CAD = CAD.substr(longitud_strop, CAD.length() - (longitud_strop+1));
     double operando;
     if (!existeOperador(CAD))
     {
@@ -158,6 +160,8 @@ double OPERADOR_Seno(string CAD, unique_ptr<CELDA[]>* & matriz)
 
 double OPERADOR_Coseno(string CAD, unique_ptr<CELDA[]>* & matriz)
 {
+    size_t longitud_strop = 4;
+    CAD = CAD.substr(longitud_strop, CAD.length() - (longitud_strop+1));
     double operando;
     if (!existeOperador(CAD))
     {
@@ -176,6 +180,8 @@ double OPERADOR_Coseno(string CAD, unique_ptr<CELDA[]>* & matriz)
 
 double OPERADOR_Tangente(string CAD, unique_ptr<CELDA[]>* & matriz)
 {
+    size_t longitud_strop = 4;
+    CAD = CAD.substr(longitud_strop, CAD.length() - (longitud_strop+1));
     double operando;
     if (!existeOperador(CAD))
     {
@@ -202,6 +208,7 @@ string operarCadena(const CAD_OBJETIVO cadena, unique_ptr<CELDA[]>* & matriz)
         if (cadena.c_operador == ope)
         {
             string nueva_subcad = to_string(fOpe[i](cadena.cad, matriz));
+            cout<<"\nXXXXX"<<nueva_subcad<<"XXXXX\n";
             return nueva_subcad;
         }
         i++;
