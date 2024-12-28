@@ -9,7 +9,7 @@
 
 using namespace std;
 
-double OPERADOR_Asignacion(string CAD, unique_ptr<CELDA[]>* & matriz)
+double OPERADOR_Asignacion(string CAD, unique_ptr<unique_ptr<CELDA[]>[]> & matriz)
 {
     string subcad = CAD.substr(1);
     double operando;
@@ -22,7 +22,7 @@ double OPERADOR_Asignacion(string CAD, unique_ptr<CELDA[]>* & matriz)
     return operando;
 }
 
-double OPERADOR_Adicion(string CAD, unique_ptr<CELDA[]>* & matriz)
+double OPERADOR_Adicion(string CAD, unique_ptr<unique_ptr<CELDA[]>[]> & matriz)
 {
     double operando1, operando2;
     size_t pos = CAD.find('+');
@@ -51,7 +51,7 @@ double OPERADOR_Adicion(string CAD, unique_ptr<CELDA[]>* & matriz)
     return operando1 + operando2;
 }
 
-double OPERADOR_Sustraccion(string CAD, unique_ptr<CELDA[]>* & matriz)
+double OPERADOR_Sustraccion(string CAD, unique_ptr<unique_ptr<CELDA[]>[]> & matriz)
 {
     double operando1, operando2;
     size_t pos = CAD.find('-');
@@ -80,7 +80,7 @@ double OPERADOR_Sustraccion(string CAD, unique_ptr<CELDA[]>* & matriz)
     return operando1 - operando2;
 }
 
-double OPERADOR_Multiplicacion(string CAD, unique_ptr<CELDA[]>* & matriz)
+double OPERADOR_Multiplicacion(string CAD, unique_ptr<unique_ptr<CELDA[]>[]> & matriz)
 {
     double operando1, operando2;
     size_t pos = CAD.find('*');
@@ -109,7 +109,7 @@ double OPERADOR_Multiplicacion(string CAD, unique_ptr<CELDA[]>* & matriz)
     return operando1 * operando2;
 }
 
-double OPERADOR_Division(string CAD, unique_ptr<CELDA[]>* & matriz)
+double OPERADOR_Division(string CAD, unique_ptr<unique_ptr<CELDA[]>[]> & matriz)
 {
     double operando1, operando2;
     size_t pos = CAD.find('/');
@@ -138,7 +138,7 @@ double OPERADOR_Division(string CAD, unique_ptr<CELDA[]>* & matriz)
     return operando1 / operando2;
 }
 
-double OPERADOR_Seno(string CAD, unique_ptr<CELDA[]>* & matriz)
+double OPERADOR_Seno(string CAD, unique_ptr<unique_ptr<CELDA[]>[]> & matriz)
 {
     size_t longitud_strop = 4;
     CAD = CAD.substr(longitud_strop, CAD.length() - (longitud_strop+1));
@@ -158,7 +158,7 @@ double OPERADOR_Seno(string CAD, unique_ptr<CELDA[]>* & matriz)
     }
 }
 
-double OPERADOR_Coseno(string CAD, unique_ptr<CELDA[]>* & matriz)
+double OPERADOR_Coseno(string CAD, unique_ptr<unique_ptr<CELDA[]>[]> & matriz)
 {
     size_t longitud_strop = 4;
     CAD = CAD.substr(longitud_strop, CAD.length() - (longitud_strop+1));
@@ -178,7 +178,7 @@ double OPERADOR_Coseno(string CAD, unique_ptr<CELDA[]>* & matriz)
     }
 }
 
-double OPERADOR_Tangente(string CAD, unique_ptr<CELDA[]>* & matriz)
+double OPERADOR_Tangente(string CAD, unique_ptr<unique_ptr<CELDA[]>[]> & matriz)
 {
     size_t longitud_strop = 4;
     CAD = CAD.substr(longitud_strop, CAD.length() - (longitud_strop+1));
@@ -198,9 +198,9 @@ double OPERADOR_Tangente(string CAD, unique_ptr<CELDA[]>* & matriz)
     }
 }
 
-string operarCadena(const CAD_OBJETIVO cadena, unique_ptr<CELDA[]>* & matriz)
+string operarCadena(const CAD_OBJETIVO cadena, unique_ptr<unique_ptr<CELDA[]>[]> & matriz)
 {
-    double (*fOpe[8])(string, unique_ptr<CELDA[]>* & matriz) = {&::OPERADOR_Asignacion, &::OPERADOR_Adicion, &::OPERADOR_Sustraccion, &::OPERADOR_Multiplicacion, &::OPERADOR_Division, &OPERADOR_Seno, &::OPERADOR_Coseno, &::OPERADOR_Tangente};
+    double (*fOpe[8])(string, unique_ptr<unique_ptr<CELDA[]>[]> & matriz) = {&::OPERADOR_Asignacion, &::OPERADOR_Adicion, &::OPERADOR_Sustraccion, &::OPERADOR_Multiplicacion, &::OPERADOR_Division, &OPERADOR_Seno, &::OPERADOR_Coseno, &::OPERADOR_Tangente};
     string strOPERADORES[] = {"=", "+", "-", "*", "/", "sen", "cos", "tan"};
     int i=0;
     for (string ope : strOPERADORES)

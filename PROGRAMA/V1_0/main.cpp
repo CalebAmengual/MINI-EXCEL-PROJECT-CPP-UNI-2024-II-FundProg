@@ -21,7 +21,7 @@ void demo1(unique_ptr<CELDA[]>* & );
 int main() {
     // 
     Tam filas = 5, columnas = 6, ancho = 10;
-    unique_ptr<CELDA[]>* Matriz = genMatrizDinCeldas1(filas,columnas);
+    unique_ptr<unique_ptr<CELDA[]>[]> Matriz = genMatrizDinCeldas1(filas,columnas);
     //int tamano = size(CELDA);
     //Matriz[0][1].establecerValor(to_string(3.14));
     //demo1(Matriz);
@@ -65,7 +65,7 @@ void mostrarMenu() {
 }
 
 // Función para escribir en una celda
-void escribirEnCelda(unique_ptr<CELDA[]>* & matriz, Tam filas, Tam columnas) {
+void escribirEnCelda(unique_ptr<unique_ptr<CELDA[]>[]> & matriz, Tam filas, Tam columnas) {
     Tam fila, columna;
     string valor;
 
@@ -87,12 +87,12 @@ void escribirEnCelda(unique_ptr<CELDA[]>* & matriz, Tam filas, Tam columnas) {
 }
 
 
-void mostrarContenidoCelda(unique_ptr<CELDA[]>* & matriz,Tam filas,Tam columnas){
+void mostrarContenidoCelda(unique_ptr<unique_ptr<CELDA[]>[]> & matriz,Tam filas,Tam columnas){
     genMalla4(filas, columnas, 16, matriz);
 }
 
 
-void demo1(unique_ptr<CELDA[]>* & mat)
+void demo1(unique_ptr<unique_ptr<CELDA[]>[]> & mat)
 {
     double resul=-1;
     string cad1="=B1", cad2="5";

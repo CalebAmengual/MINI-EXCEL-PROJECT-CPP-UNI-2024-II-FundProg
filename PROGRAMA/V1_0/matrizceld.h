@@ -8,7 +8,7 @@
 
 using namespace std;
 
-unique_ptr<CELDA[]>*  genMatrizDinCeldas1(const int, const int);
+unique_ptr<unique_ptr<CELDA[]>[]>  genMatrizDinCeldas1(const int fila, const int colu);
 
 //void eliminarMatrizDinCeldas1(int, shared_ptr<CELDA[]>* );
 

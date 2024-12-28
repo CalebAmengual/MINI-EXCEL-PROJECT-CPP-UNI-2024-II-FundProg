@@ -161,7 +161,7 @@ CAD_OBJETIVO buscarCadenaObj(const string &cadena)
 
 
 
-double evaluar(string cadena, unique_ptr<CELDA[]>* & matriz)
+double evaluar(string cadena, unique_ptr<unique_ptr<CELDA[]>[]> & matriz)
 {
     if (!existeOperador(cadena))
     {

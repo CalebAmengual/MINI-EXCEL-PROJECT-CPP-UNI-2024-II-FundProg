@@ -19,6 +19,6 @@ bool existeOperador(const string&);
 
 CAD_OBJETIVO buscarCadenaObj(const string&);
 
-double evaluar(string, unique_ptr<CELDA[]>* & );
+double evaluar(string, unique_ptr<unique_ptr<CELDA[]>[]> & );
 
 #endif //__FUNCIONES_H__

@@ -31,7 +31,7 @@ class CELDA
     void establecerVisible(const string &cadena){m_visible = cadena;};
 
     public:
-    void actualizarCelda(unique_ptr<CELDA[]>* & matriz);
+    void actualizarCelda(unique_ptr<unique_ptr<CELDA[]>[]> & matriz);
 
     public:
     virtual ~CELDA(){};
