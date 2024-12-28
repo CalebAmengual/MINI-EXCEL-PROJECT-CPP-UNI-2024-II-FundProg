@@ -13,9 +13,9 @@ using namespace std;
 
 // Prototipos de las funciones
 void mostrarMenu();
-void escribirEnCelda(unique_ptr<CELDA[]>* & , Tam, Tam);
-void mostrarContenidoCelda(unique_ptr<CELDA[]>* & , Tam, Tam);
-void demo1(unique_ptr<CELDA[]>* & );
+void escribirEnCelda(unique_ptr<unique_ptr<CELDA[]>[]> & , Tam, Tam);
+void mostrarContenidoCelda(unique_ptr<unique_ptr<CELDA[]>[]> & , Tam, Tam);
+void demo1(unique_ptr<unique_ptr<CELDA[]>[]> & );
 // g++ main.cpp celda.cpp funciones.cpp functmallas.cpp mallas.cpp operadores.cpp matrizceld.cpp -o main
 
 int main() {
