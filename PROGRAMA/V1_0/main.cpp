@@ -20,7 +20,7 @@ void demo1(unique_ptr<unique_ptr<CELDA[]>[]> & );
 
 int main() {
     // 
-    Tam filas = 5, columnas = 6, ancho = 10;
+    Tam filas = 10, columnas = 9, ancho = 16;
     unique_ptr<unique_ptr<CELDA[]>[]> Matriz = genMatrizDinCeldas1(filas,columnas);
     //int tamano = size(CELDA);
     //Matriz[0][1].establecerValor(to_string(3.14));

@@ -169,9 +169,10 @@ void genMalla4(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, unique_ptr<unique_pt
                 if (j%(ANCHO+1) != 0){
                     
                     if(j==1 && i==1){
-                        cout<<ceStringFormat(" ",ANCHO+1);
+                        cout<<ceStringFormat(' ',ANCHO);
+                        cout<<'|';
                         coluMat++;
-                        j += ANCHO-1;
+                        j += ANCHO+1;
                     }
 
                     if(j==1 || i==1){
@@ -183,7 +184,7 @@ void genMalla4(Tam cFILAS=9, Tam cCOLUMNAS=9, Tam ANCHO=16, unique_ptr<unique_pt
                         }
                         else{
                             char c=64+coluMat;
-                            cout<<ceStringFormat(c,ANCHO+1);
+                            cout<<ceStringFormat(c,ANCHO);
                             coluMat++;
                             j += ANCHO-1;
                         }
